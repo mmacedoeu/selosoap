@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://middleware.sicobe.valid.com.br/soap"
+           targetNamespace="http://middleware.sicobe.valid.com.br/soap" elementFormDefault="qualified">
+
+    <xs:element name="SelosRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="data" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Selos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="selos" minOccurs="0" maxOccurs="unbounded" type="tns:producao"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="producao">
+        <xs:sequence>
+            <xs:element name="CodigoProducao" type="xs:long"/>
+            <xs:element name="Data" type="xs:string"/>
+            <xs:element name="Selo" type="xs:string"/>               
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
